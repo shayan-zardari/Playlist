@@ -22,12 +22,12 @@ main {
     height: 40px;
     padding-left: 10px;
     font-size: large;
+    border: 0;
 }
 
 .input_text_button:focus {
-    outline-offset: 4px;
     outline-style: solid;
-    outline-color: blueviolet;
+    outline-color: rgb(30, 94, 255);
     outline-width: 2px;
 }
 

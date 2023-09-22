@@ -6,23 +6,21 @@ let artist_name = document.querySelector("#artist_name_input");
 
 const calc_serial = () => {
 
-    let table = document.queryElementByTagName("table");
-    let index_last_row = table.rows.length ;
+    let table = document.querySelector("table");
+    let index_last_row = table.rows.length;
 
-    console.log(index_last_row);
-
-    
+    return index_last_row;
 }
 
 
-const addRow = () => {
+const addRow = (serial) => {
         
     let table_body = document.querySelector(".table_body");
 
     let new_row = document.createElement("tr");
 
     let serial_number_cell = document.createElement("td");
-    serial_number_cell.innerHTML = "1";
+    serial_number_cell.innerHTML = serial;
     new_row.appendChild(serial_number_cell);
 
     let song_cell = document.createElement("td");
@@ -37,8 +35,9 @@ const addRow = () => {
 }
 
 const addSong = () => {
+    let serial = calc_serial();
     if (song_name.value !== "" && artist_name.value !== "") {
-        addRow();
+        addRow(serial);
         song_name.value = "";
         artist_name.value = "";
     }   else    {
