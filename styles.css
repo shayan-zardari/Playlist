@@ -27,7 +27,7 @@ main {
 
 .input_text_button:focus {
     outline-style: solid;
-    outline-color: rgb(30, 94, 255);
+    outline-color: rgb(14, 43, 116);
     outline-width: 2px;
 }
 
