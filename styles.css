@@ -56,7 +56,19 @@ table {
 
 }
 
+td {
+    border: 0;
+}
+
 tr {
     padding: 7px 0;
+    border: 0;
     text-align: center;
+}
+
+.selected > td {
+    background-color: green;
+    color: white;
+    border-radius: 30px;
+
 }

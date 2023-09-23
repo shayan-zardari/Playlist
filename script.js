@@ -3,15 +3,14 @@ let song_name = document.querySelector("#song_name_input");
 
 let artist_name = document.querySelector("#artist_name_input");
 
+let table = document.querySelector("table");
 
 const calc_serial = () => {
 
-    let table = document.querySelector("table");
     let index_last_row = table.rows.length;
 
     return index_last_row;
 }
-
 
 const addRow = (serial) => {
         
@@ -43,4 +42,27 @@ const addSong = () => {
     }   else    {
         alert("Enter the Song and Artist.")
     }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+    table.addEventListener('click', function(e) {
+
+        for (let i = 0; i < table.rows.length; i++)    {
+            let current_row = table.rows[i];
+            current_row.classList.remove("selected");
+        }
+
+        let target = e.target; 
+
+        if (target.tagName === 'TD') {
+            var row = target.parentElement; 
+            toggleRowSelection(row);
+        }
+        
+    });
+});
+
+function toggleRowSelection(row) {
+    row.classList.toggle('selected'); 
 }
