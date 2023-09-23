@@ -72,12 +72,22 @@ const removeSong = () => {
     for (let i = 0; i < table.rows.length; i++) {
         let current_row = table.rows[i];
         if (current_row.classList.contains("selected")) {
-            let selected_row = current_row;
-            table.deleteRow(selected_row.rowIndex);
+            let selected_row_index = current_row.rowIndex;
+            table.deleteRow(selected_row_index);
+            decrementSerialNumber(selected_row_index);
             return;
         }
     }
 
     alert("Please select a row to delete!");
 
+}
+
+function decrementSerialNumber(previousSerial) {
+    for (let i = previousSerial; i < table.rows.length; i++) {
+        let row = table.rows[i];
+        let serial_cell = row.cells[0];
+        serial_cell.innerHTML = previousSerial;
+        previousSerial++;
+    }
 }
