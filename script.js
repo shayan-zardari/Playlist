@@ -59,10 +59,25 @@ document.addEventListener('DOMContentLoaded', function() {
             var row = target.parentElement; 
             toggleRowSelection(row);
         }
-        
+
     });
 });
 
 function toggleRowSelection(row) {
     row.classList.toggle('selected'); 
+}
+
+const removeSong = () => {
+
+    for (let i = 0; i < table.rows.length; i++) {
+        let current_row = table.rows[i];
+        if (current_row.classList.contains("selected")) {
+            let selected_row = current_row;
+            table.deleteRow(selected_row.rowIndex);
+            return;
+        }
+    }
+
+    alert("Please select a row to delete!");
+
 }
