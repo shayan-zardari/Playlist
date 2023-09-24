@@ -18,7 +18,7 @@ main {
 
 .input_text_button {
     margin: 10px 0;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     height: 40px;
     padding-left: 10px;
     font-size: large;
@@ -34,11 +34,14 @@ main {
 .input_buttons {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .add_remove {
-    width: 100%;
+    width: 150px;
     margin: 0 30px;
+    border-radius: 0;
+    text-align: center;
     background: rgb(30, 94, 255);
     color: white;
 }
@@ -51,7 +54,6 @@ main {
 
 table {
     background-color: white;
-    border-radius: 30px;
     margin: 20px 0;
 
 }
@@ -69,6 +71,4 @@ tr {
 .selected > td {
     background-color: green;
     color: white;
-    border-radius: 30px;
-
 }
