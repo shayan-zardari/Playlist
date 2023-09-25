@@ -72,3 +72,42 @@ tr {
     background-color: green;
     color: white;
 }
+
+.blur {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.play_screen {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline_container {
+    position: relative;
+    padding: 10px 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#timeline1 {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+}
+
+#timeline2 {
+    background-color: black;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+}
