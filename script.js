@@ -12,6 +12,19 @@ const calc_serial = () => {
     return index_last_row;
 }
 
+const generateTimeStamp = () => {
+
+    let randomMinute = Math.floor(Math.random() * 5);
+    let randomSecond = Math.floor(Math.random() * 60);
+
+    let timeToRun = randomMinute * 60 * 1000 + randomSecond * 1000;
+
+    let timeStamp = randomMinute.toString().padStart(2, "0")  + ":" + randomSecond.toString().padStart(2, "0");
+
+
+    return {time_stamp: timeStamp, animation_time: timeToRun};
+}
+
 const addRow = (serial) => {
         
     let table_body = document.querySelector(".table_body");
@@ -31,7 +44,7 @@ const addRow = (serial) => {
     new_row.appendChild(artist_cell);
 
     let time_cell = document.createElement("td");
-    time_cell.innerHTML = generateTimeStamp();
+    time_cell.innerHTML = generateTimeStamp().time_stamp;
     new_row.appendChild(time_cell);
 
     table_body.appendChild(new_row);
@@ -142,22 +155,13 @@ run();
 
 let timeline = document.getElementById("timeline2");
 
-const animateTimeline = () => {
-    
+const transformTimeline = () => {
     timeline.style.transformOrigin = "left center"
     timeline.style.transform = "scale(1)";
-
 }
 
-animateTimeline();
+function animateTimeline () {
+    let timeToRun = generateTimeStamp().animation_time;
 
-const generateTimeStamp = () => {
-
-    let randomMinute = Math.floor(Math.random() * 5);
-    let randomSecond = Math.floor(Math.random() * 60);
-
-    let timeStamp = randomMinute.toString().padStart(2, "0")  + ":" + randomSecond.toString().padStart(2, "0");
-
-    return timeStamp;
+    setTimeout(transformTimeline, timeToRun);
 }
-
