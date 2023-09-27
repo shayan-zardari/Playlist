@@ -30,6 +30,10 @@ const addRow = (serial) => {
     artist_cell.innerHTML = artist_name.value;
     new_row.appendChild(artist_cell);
 
+    let time_cell = document.createElement("td");
+    time_cell.innerHTML = generateTimeStamp();
+    new_row.appendChild(time_cell);
+
     table_body.appendChild(new_row);
 }
 
@@ -143,8 +147,17 @@ const animateTimeline = () => {
     timeline.style.transformOrigin = "left center"
     timeline.style.transform = "scale(1)";
 
-    
-
 }
 
 animateTimeline();
+
+const generateTimeStamp = () => {
+
+    let randomMinute = Math.floor(Math.random() * 5);
+    let randomSecond = Math.floor(Math.random() * 60);
+
+    let timeStamp = randomMinute.toString().padStart(2, "0")  + ":" + randomSecond.toString().padStart(2, "0");
+
+    return timeStamp;
+}
+
