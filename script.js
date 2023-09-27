@@ -135,3 +135,16 @@ run();
 
 
 // ****** NOT MY CODE (ABOVE THIS) ******* //
+
+let timeline = document.getElementById("timeline2");
+
+const animateTimeline = () => {
+    
+    timeline.style.transformOrigin = "left center"
+    timeline.style.transform = "scale(1)";
+
+    
+
+}
+
+animateTimeline();
