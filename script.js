@@ -5,6 +5,8 @@ let artist_name = document.querySelector("#artist_name_input");
 
 let table = document.querySelector("table");
 
+let song_display = document.querySelector("#song_playing")
+
 const calc_serial = () => {
 
     let index_last_row = table.rows.length;
@@ -160,8 +162,12 @@ const transformTimeline = () => {
     timeline.style.transform = "scale(1)";
 }
 
-function animateTimeline () {
-    let timeToRun = generateTimeStamp().animation_time;
+function playSong () {
+    if (table.rows.length < 1) {
+        alert("The playlist is empty. Please enter a song then play.")
+    }   else    {
+        let song_to_play = table.rows[1].cells[1];
+        song_display.value = song_to_play.innerHTML;
+    }
 
-    setTimeout(transformTimeline, timeToRun);
 }

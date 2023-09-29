@@ -20,6 +20,7 @@
                 <canvas class="timeline" width="32" height="3" id="timeline1"></canvas>
                 <canvas class="timeline" width="32" height="3" id="timeline2"></canvas>
             </div>
+            <input type="text" id="song_playing" class="input_text_button" value="" readonly>
         </div>    
     </div>
     
@@ -29,6 +30,7 @@
     <div class="input_buttons">
         <input type="button" id="add_song" class="input_text_button add_remove" value="Add" onclick="addSong()">
         <input type="button" id="remove_song" class="input_text_button add_remove" value="Remove" onclick="removeSong()">
+        <input type="button" id="play_song" class="input_text_button add_remove" value="Play" onclick="playSong()">
     </div>
 
     <table>
