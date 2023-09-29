@@ -23,6 +23,7 @@ main {
     padding-left: 10px;
     font-size: large;
     border: 0;
+    cursor: pointer;
 }
 
 .input_text_button:focus {
@@ -113,16 +114,29 @@ tr {
     top: 50%;
 }
 
+
 #song_playing {
     text-align: center;
+    font-size: xx-large;
     width: auto;
     background-color: rgba(255, 255, 255, 0.227);
     border-radius: 100px;
     width: 100%;
     color: white;
     text-decoration: wavy;
+    cursor: pointer;
+    animation: slide 10s infinite linear;
 }
 
 #song_playing:focus {
     outline: none;
+}
+
+@keyframes slide {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
 }

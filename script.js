@@ -162,12 +162,17 @@ const transformTimeline = () => {
     timeline.style.transform = "scale(1)";
 }
 
-function playSong () {
-    if (table.rows.length < 1) {
-        alert("The playlist is empty. Please enter a song then play.")
-    }   else    {
-        let song_to_play = table.rows[1].cells[1];
-        song_display.value = song_to_play.innerHTML;
-    }
+function endSong () {
+    let time_play = table.rows.cells[2];
+    console.log(time_play);
+}
 
+function playSong () {
+    if (table.rows.length == 1) {
+        alert("The playlist is empty. Please enter a song then play.");
+    }   else    {
+        let song_to_play = table.rows[1];
+        song_display.value = song_to_play.cells[1].innerHTML;
+    }
+    endSong();
 }
